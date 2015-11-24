@@ -1,0 +1,27 @@
+@import "foundation";
+@import "font-awesome";
+
+body {
+  background: #c2c2c2;
+}
+
+.container {
+  width: 70%;
+  margin: 25px auto;
+}
+
+.imageListItem{
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  border: 1px solid #333433;
+  border-radius: 3px;
+
+  img{
+    height: 100%;
+    width: 100%;
+    padding: 3%;
+  }
+}
