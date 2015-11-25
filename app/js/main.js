@@ -100,7 +100,6 @@ var HomeController = function HomeController(ImageService) {
 
   ImageService.getAllImages().then(function (res) {
     vm.images = res.data.results;
-    console.log(vm.images);
   });
 };
 
@@ -123,7 +122,7 @@ var singleImage = function singleImage($state, ImageService, $timeout) {
     scope: {
       image: "=brzi"
     },
-    template: '\n    <ul class="imageList">\n      <li class="imageListItem">\n        <img class="insta" ng-src="{{ image.url }}">\n         <div class="click">\n          <img class="heart" src="/images/like.png">\n          <div class="likes">{{ image.likes }}</div>\n        </div>\n      </li>\n    </ul>\n    ',
+    template: '\n    <ul class="imageList">\n      <li class="imageListItem shadow2">\n        <img class="insta" ng-src="{{ image.url }}">\n         <div class="click">\n          <img class="heart" src="/images/like.png">\n          <div class="likes">{{ image.likes }}</div>\n        </div>\n      </li>\n    </ul>\n    ',
     controller: 'HomeController as vm',
     link: function link(scope, element, attrs) {
       element.on('dblclick', function () {
@@ -197,6 +196,7 @@ var ImageService = function ImageService($http, PARSE) {
 
   function addImage(imgObj) {
     var i = new Image(imgObj);
+    i.likes = 0;
     return $http.post(url, i, PARSE.CONFIG);
   }
 

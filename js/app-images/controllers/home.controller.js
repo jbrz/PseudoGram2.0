@@ -4,7 +4,6 @@ let HomeController = function (ImageService) {
 
   ImageService.getAllImages().then ( (res) => {
     vm.images = res.data.results;
-    console.log(vm.images);
   });
 
 };

@@ -21,6 +21,7 @@ let ImageService = function($http, PARSE) {
 
   function addImage (imgObj) {
     let i = new Image(imgObj);
+    i.likes = 0;
     return $http.post(url, i, PARSE.CONFIG);
   }
 

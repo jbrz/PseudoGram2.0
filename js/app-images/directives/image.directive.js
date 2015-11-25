@@ -8,7 +8,7 @@ let singleImage = function($state, ImageService, $timeout) {
     },
     template: `
     <ul class="imageList">
-      <li class="imageListItem">
+      <li class="imageListItem shadow2">
         <img class="insta" ng-src="{{ image.url }}">
          <div class="click">
           <img class="heart" src="/images/like.png">

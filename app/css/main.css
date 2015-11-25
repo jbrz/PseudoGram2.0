@@ -8410,12 +8410,31 @@ th.hide-for-touch {
 body {
   background: #c2c2c2; }
 
+button {
+  background-color: #305F88;
+  border-color: #304E66; }
+
+.shadow1 {
+  -moz-box-shadow: 1px 1px 1px 1px #aaaaaa;
+  -webkit-box-shadow: 0px 0px 1px 1px #aaaaaa;
+  box-shadow: 3px 3px 5px 6px #aaaaaa; }
+
+.shadow2 {
+  -moz-box-shadow: 1px 1px 1px 1px #aaaaaa;
+  -webkit-box-shadow: 0px 0px 1px 1px #aaaaaa;
+  box-shadow: 1px 1px 2px 3px #aaaaaa; }
+
 .container {
   width: 70%;
   margin: 25px auto; }
 
-.add {
-  margin: 0 auto; }
+.logoWrapper {
+  border-radius: 10px;
+  width: 50%;
+  margin: 10px auto; }
+  .logoWrapper img {
+    width: 100%;
+    border-radius: 10px; }
 
 .imageList {
   margin: 5px;
