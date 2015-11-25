@@ -100,8 +100,8 @@ var HomeController = function HomeController(ImageService) {
 
   ImageService.getAllImages().then(function (res) {
     vm.images = res.data.results;
+    console.log(vm.images);
   });
-  console.log(vm.images);
 };
 
 HomeController.$inject = ['ImageService'];
@@ -121,13 +121,13 @@ var singleImage = function singleImage($state, ImageService, $timeout) {
     restrict: 'AE',
     replace: true,
     scope: {
-      image: "="
+      image: "=brzi"
     },
-    template: '\n    <div class="imageList">\n      <li class="imageListItem">\n          <img class="pic" ng-src="{{ image.url }}">\n          <div class="clicked">\n            <img src="/images/heart.gif">\n            <div class="likes">{{ image.likes }}</div>\n          </div>\n      </li>\n    </ul>\n    ',
+    template: '\n    <ul class="imageList">\n      <li class="imageListItem">\n        <img class="insta" ng-src="{{ image.url }}">\n         <div class="click">\n          <img class="heart" src="/images/like.png">\n          <div class="likes">{{ image.likes }}</div>\n        </div>\n      </li>\n    </ul>\n    ',
     controller: 'HomeController as vm',
     link: function link(scope, element, attrs) {
       element.on('dblclick', function () {
-        angular.element(this).children().children('.clicked').toggleClass('show');
+        angular.element(this).children().children('.click').toggleClass('show');
         ImageService.like(scope.image);
       });
     }
@@ -150,13 +150,13 @@ var _angular2 = _interopRequireDefault(_angular);
 
 require('../app-core/index');
 
+var _controllersAddController = require('./controllers/add.controller');
+
+var _controllersAddController2 = _interopRequireDefault(_controllersAddController);
+
 var _controllersHomeController = require('./controllers/home.controller');
 
 var _controllersHomeController2 = _interopRequireDefault(_controllersHomeController);
-
-var _controllersAddController = require('./controllers/Add.controller');
-
-var _controllersAddController2 = _interopRequireDefault(_controllersAddController);
 
 var _servicesImageService = require('./services/image.service');
 
@@ -168,7 +168,7 @@ var _directivesImageDirective2 = _interopRequireDefault(_directivesImageDirectiv
 
 _angular2['default'].module('app.images', ['app.core']).controller('HomeController', _controllersHomeController2['default']).controller('AddController', _controllersAddController2['default']).service('ImageService', _servicesImageService2['default']).directive('singleImage', _directivesImageDirective2['default']);
 
-},{"../app-core/index":3,"./controllers/Add.controller":4,"./controllers/home.controller":5,"./directives/image.directive":6,"./services/image.service":8,"angular":12}],8:[function(require,module,exports){
+},{"../app-core/index":3,"./controllers/add.controller":4,"./controllers/home.controller":5,"./directives/image.directive":6,"./services/image.service":8,"angular":12}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {

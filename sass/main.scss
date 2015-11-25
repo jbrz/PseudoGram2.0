@@ -10,18 +10,43 @@ body {
   margin: 25px auto;
 }
 
-.imageListItem{
-  width: 150px;
-  height: 150px;
-  display: inline-block;
-  text-align: center;
-  position: relative;
-  border: 1px solid #333433;
-  border-radius: 3px;
+.add {
+  margin: 0 auto;
+}
 
-  img{
-    height: 100%;
-    width: 100%;
-    padding: 3%;
+.imageList {
+  margin: 5px;
+  display: inline-block;
+  position: relative;
+
+  .imageListItem{
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    border: 1px solid #333433;
+    border-radius: 3px;
+
+    img{
+      height: 100%;
+      width: 100%;
+      padding: 2%;
+    }
+
+    .click {
+    max-height: 50%;
+    position:absolute;
+    top: 15%;
+    left: 5%;
+    display: none;
+
+      img {
+        max-width: 60%;
+      }
+    }
+    .show {
+      display: inline-block;
+    }
   }
 }

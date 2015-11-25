@@ -1,8 +1,8 @@
 import angular from 'angular';
 import '../app-core/index';
 
+import AddController from './controllers/add.controller';
 import HomeController from './controllers/home.controller';
-import AddController from './controllers/Add.controller';
 
 import ImageService from './services/image.service';
 

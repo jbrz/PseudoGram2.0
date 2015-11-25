@@ -4,23 +4,23 @@ let singleImage = function($state, ImageService, $timeout) {
     restrict: 'AE',
     replace: true,
     scope: {
-      image: "="
+      image: "=brzi"
     },
     template: `
-    <div class="imageList">
+    <ul class="imageList">
       <li class="imageListItem">
-          <img class="pic" ng-src="{{ image.url }}">
-          <div class="clicked">
-            <img src="/images/heart.gif">
-            <div class="likes">{{ image.likes }}</div>
-          </div>
+        <img class="insta" ng-src="{{ image.url }}">
+         <div class="click">
+          <img class="heart" src="/images/like.png">
+          <div class="likes">{{ image.likes }}</div>
+        </div>
       </li>
     </ul>
     `,
     controller: 'HomeController as vm',
     link: function (scope, element, attrs) {
       element.on('dblclick', function () {
-        angular.element(this).children().children('.clicked').toggleClass('show');
+        angular.element(this).children().children('.click').toggleClass('show');
         ImageService.like(scope.image);
       });
 

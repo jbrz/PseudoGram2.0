@@ -1,10 +1,9 @@
 <div>
-  <a href="#/add"><button>Add</button></a>
+  <a class="add" href="#/add"><button>Add a Notstagram!</button></a>
   <div ng-controller="HomeController as vm">
-    <brzly-img 
-      ng-repeat="image in vm.images" 
-      image="image"
-      >
-    </brzly-img>
+    <single-image
+      ng-repeat="i in vm.images" 
+      brzi="i">
+    </single-image>
   </div>
 </div>
